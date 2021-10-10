@@ -34,12 +34,12 @@ app.get("/users", async(req,res)=>{
         console.error(error.message);
     }
 });
-// Select a user
 
-app.get("/users/:id", async(req, res) => {
+// Select a user
+app.get("/users/:username", async(req, res) => {
     try {
-      const {id}=req.params;
-      const user = await pool.query("SELECT * FROM users WHERE user_id=$1", [id]);
+      const {username}=req.params;
+      const user = await pool.query("SELECT * FROM users WHERE username=$1", [username]);
       res.json(user.rows[0]);
     } catch (error) {
         console.error(error.message);

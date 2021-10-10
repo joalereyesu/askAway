@@ -65,11 +65,11 @@ function SignUp(){
       id="consent"
       required="required"
       />
-    <label for="consent">I agree to Terms and Conditions</label>
+    <label for="consent">I agree to <a href="http://localhost:5000/terms">Terms and Conditions</a></label>
     <button className="btn btn-warning">Sign Up</button>
     </span>
   </form>
-  <p className="pstyle">If you already have an account, <a href="http://localhost:5000/users">Sign In</a></p>
+  <p className="pstyle">If you already have an account, <a href="http://localhost:3000/signup">Sign In</a></p>
     </div>
   </body>
   );
