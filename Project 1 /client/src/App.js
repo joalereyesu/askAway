@@ -6,13 +6,13 @@ import { BrowserRouter, Route, Switch } from 'react-router-dom';
 //components
 import SignUp from "./components/SignUp";
 import SignIn from "./components/SignIn";
+import NavBar from "./components/Navbar";
 
 
 
 function App() {
   
     return <Fragment>
-      <div className="container">
       <BrowserRouter>
         <Switch>
           <Route path="/signup">
@@ -21,9 +21,11 @@ function App() {
           <Route path="/signin">
             <SignIn />
           </Route>
+          <Route path="/sidebar">
+            <NavBar />
+          </Route>
         </Switch>
       </BrowserRouter>
-      </div> 
     </Fragment>
 }
 
