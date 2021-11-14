@@ -36,15 +36,19 @@ app.get("/users", async(req,res)=>{
 });
 
 // Select a user
-app.get("/users/:username", async(req, res) => {
+app.get("/homepage/:username", async(req, res) => {
     try {
       const {username}=req.params;
       const user = await pool.query("SELECT * FROM users WHERE username=$1", [username]);
       res.json(user.rows[0]);
+      pool.query("CREATE TABLE "+ user + "(q_id SERIAL PRIMARY KEY, question VARCHAR(250)", (err, res) => {
+        console.log(err, res);
+        pool.end();
+        });
     } catch (error) {
         console.error(error.message);
     }
-});
+})
 
 //Update info
 app.put("/users/:id", async(req, res)=>{
@@ -73,5 +77,3 @@ app.delete("/users/:id", async(req, res)=>{
 app.listen(5000, () => {
     console.log("The server has started on port 5000");
 });
-
-
