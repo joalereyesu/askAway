@@ -54,3 +54,5 @@ function HomePage(){
       </body>
     );
 }
+
+export default HomePage;
