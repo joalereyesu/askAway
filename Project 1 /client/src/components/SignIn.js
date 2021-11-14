@@ -19,7 +19,7 @@ function SignIn(){
       .then(response => response.json())
       if (response["password"]===pass["password"]){
         console.log("Si funciono")
-        window.location.href = 'http://localhost:3000/signup';
+        window.location.href = 'http://localhost:3000/homepage';
       }
       console.log(response["username"])
       console.log(response["password"])
