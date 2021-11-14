@@ -11,7 +11,7 @@ function SignUp(){
     evt.preventDefault();
     try {
       const body={username, email, password};
-      const response= await fetch("http://localhost:5000/signup", {
+      const response= await fetch("http://localhost:5001/signup", {
         method:"POST",
         headers:{"Content-Type":"application/json"},
         body:JSON.stringify(body)
@@ -65,11 +65,11 @@ function SignUp(){
       id="consent"
       required="required"
       />
-    <label for="consent">I agree to <a href="http://localhost:5000/terms">Terms and Conditions</a></label>
+    <label for="consent">I agree to <a href="http://localhost:3000/terms">Terms and Conditions</a></label>
     <button className="btn btn-warning">Sign Up</button>
     </span>
   </form>
-  <p className="pstyle">If you already have an account, <a href="http://localhost:3000/signup">Sign In</a></p>
+  <p className="pstyle">If you already have an account, <a href="http://localhost:3000/signin">Sign In</a></p>
     </div>
   </body>
   );

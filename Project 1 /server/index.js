@@ -36,7 +36,7 @@ app.get("/users", async(req,res)=>{
 });
 
 // Select a user
-app.get("/homepage/:username", async(req, res) => {
+app.get("/signin/:username", async(req, res) => {
     try {
       const {username}=req.params;
       const user = await pool.query("SELECT * FROM users WHERE username=$1", [username]);
@@ -51,7 +51,7 @@ app.get("/homepage/:username", async(req, res) => {
 })
 
 //Update info
-app.put("/users/:id", async(req, res)=>{
+app.put("/signin/:id", async(req, res)=>{
     try {
        const {id} = req.params;
        const {username, email, password}=req.body;
@@ -61,8 +61,8 @@ app.put("/users/:id", async(req, res)=>{
        console.log(error.message); 
     }
 })
-//Delete user
 
+//Delete user
 app.delete("/users/:id", async(req, res)=>{
    try {
       const {id}=req.params;
@@ -74,6 +74,6 @@ app.delete("/users/:id", async(req, res)=>{
 });
 
 
-app.listen(5000, () => {
-    console.log("The server has started on port 5000");
+app.listen(5001, () => {
+    console.log("The server has started on port 5001");
 });
