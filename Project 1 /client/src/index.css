@@ -37,6 +37,18 @@ div {
   box-shadow: 5px 8px black;
 }
 
+.signin{
+  width: 400px;
+  height: 400px;
+  position: absolute;
+  top: 15%;
+  left: 0px; 
+  right: 0px;
+  margin: 0px auto;
+  border-radius:2%;
+  box-shadow: 5px 8px black;
+}
+
 label{
   position:relative;
   left: 85px; 
@@ -47,6 +59,12 @@ label{
 }
 
 button{
+  margin-bottom:-100px;
+  margin-left: -105px;
+  color:#F0A500;
+}
+
+.buttonsignin{
   margin-bottom:-100px;
   margin-left: -105px;
   color:#F0A500;
