@@ -1,5 +1,5 @@
 ## AskAway
-<img width="538" alt="image" src="/Users/nickolasnolte/Desktop/askAway-main/Project\1\/client/public/static ">
+<img width="538" alt="image" src="/Users/nickolasnolte/Desktop/askAway-main/Project\1\/client/public/static/askaway.png">
 
 
 AskAway una comunidad virtual en la que las personas puedan interactuar entre sí y ayudarse mutuamente. 
@@ -13,5 +13,3 @@ Se cuenta con una variedad de categorías para que los clientes puedan preguntar
 - Realizar preguntas de cierta categoría
 - Responder preguntas 
 - Darle like a las preguntas
-- 
-- 
