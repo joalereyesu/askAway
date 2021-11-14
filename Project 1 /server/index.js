@@ -36,7 +36,7 @@ app.get("/users", async(req,res)=>{
 });
 
 // Select a user
-app.get("/signin/:username", async(req, res) => {
+app.get("/homepage/:username", async(req, res) => {
     try {
       const {username}=req.params;
       const user = await pool.query("SELECT * FROM users WHERE username=$1", [username]);
