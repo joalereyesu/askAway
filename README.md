@@ -1,5 +1,6 @@
 ## AskAway
-<img width="538" alt="image" src="/Users/nickolasnolte/Desktop/askAway-main/Project\1\/client/public/static/askaway.png">
+![image](https://user-images.githubusercontent.com/61555652/141694734-95281bd5-f6ff-4239-b786-7d4603ee8ce4.png)
+
 
 
 AskAway una comunidad virtual en la que las personas puedan interactuar entre sí y ayudarse mutuamente. 
