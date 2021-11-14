@@ -3,7 +3,7 @@
 
 
 
-AskAway una comunidad virtual en la que las personas puedan interactuar entre sí y ayudarse mutuamente. 
+AskAway es una comunidad virtual en la que las personas puedan interactuar entre sí y ayudarse mutuamente. 
 Se trata principalmente de un API donde los usuarios pueden hacer preguntas y responderlas.
 Se cuenta con una variedad de categorías para que los clientes puedan preguntar y responder sobre los temas de su mayor interés.
 
