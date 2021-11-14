@@ -21,6 +21,9 @@ function App() {
           <Route path="/signin">
             <SignIn />
           </Route>
+          <Route path="/homepage">
+            <HomePage />
+          </Route>
         </Switch>
       </BrowserRouter>
       </div> 
