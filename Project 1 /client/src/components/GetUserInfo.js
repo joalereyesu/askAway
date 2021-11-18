@@ -1,10 +1,18 @@
 
-function GetUserInfo (username){
-    const response= fetch("http://localhost:5001/homepage/"+username,{
+//const username = "josereyesu";
+//export const info = await fetch("http://localhost:5001/signin/"+username)
+
+const getInfo = async(evt, username) => {
+    evt.preventDefault(); 
+    try{
+        const info= await fetch("http://localhost:5001/signin/"+username,{
         method:"GET",
-    })  
-    .then(response => response.json())
-    return response;
+    })
+    .then(info => info.json())
+    console.log(info);
+    }catch (error){
+        console.error(error.message);
+    }
 }
 
-export default GetUserInfo;
+console.log(getInfo("josereyesu"));
