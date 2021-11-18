@@ -1,25 +1,22 @@
-import { Redirect } from 'react-router';
 import React from "react";
-
 
 
 function SignIn(){
   const [username, GetUsername]=React.useState('')
   const [password, GetPassword]=React.useState('')
 
-
   const GetInfo = async(evt, req, res) => {
     evt.preventDefault(); 
     try {
       const user={username};
       const pass={password};
-      const response= await fetch("http://localhost:5001/signin/"+user["username"],{
+      const response= await fetch("http://localhost:5001/homepage/"+user["username"],{
         method:"GET",
       })
       .then(response => response.json())
       if (response["password"]===pass["password"]){
         console.log("Si funciono")
-        window.location.href = 'http://localhost:3000/homepage';
+        window.location.href = 'http://localhost:3000/homepage/'+user["username"];
       }
       console.log(response["username"])
       console.log(response["password"])

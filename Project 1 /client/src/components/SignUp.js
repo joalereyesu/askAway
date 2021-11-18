@@ -68,7 +68,7 @@ function SignUp(){
     <label for="consent">I agree to <a href="http://localhost:3000/terms">Terms and Conditions</a></label>
     <button className="btn btn-warning">Sign Up</button>
     </span>
-  </form>
+  </form> 
   <p className="pstyle">If you already have an account, <a href="http://localhost:3000/signin">Sign In</a></p>
     </div>
   </body>

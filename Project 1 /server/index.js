@@ -12,7 +12,7 @@ app.use(express.json());
 
 app.get('/', function(req, res) {
 
-  });
+});
 
 
 app.post("/signup", async(req, res) => {
@@ -41,17 +41,14 @@ app.get("/homepage/:username", async(req, res) => {
       const {username}=req.params;
       const user = await pool.query("SELECT * FROM users WHERE username=$1", [username]);
       res.json(user.rows[0]);
-      pool.query("CREATE TABLE "+ user + "(q_id SERIAL PRIMARY KEY, question VARCHAR(250)", (err, res) => {
-        console.log(err, res);
-        pool.end();
-        });
+      const q_table = await pool.query(`CREATE TABLE ${username} (q_id SERIAL PRIMARY KEY, question VARCHAR(250));`);
     } catch (error) {
         console.error(error.message);
     }
 })
 
 //Update info
-app.put("/signin/:id", async(req, res)=>{
+app.put("/profile/:id", async(req, res)=>{
     try {
        const {id} = req.params;
        const {username, email, password}=req.body;

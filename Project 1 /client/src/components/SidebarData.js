@@ -5,13 +5,13 @@ import * as BsIcons from 'react-icons/bs';
 export const SidebarData = [
   {
     title: 'Home',
-    path: '/home',
+    path: '/homepage/',
     icon: <AiIcons.AiFillHome />,
     cName: 'nav-text'
   },
   {
     title: 'Profile',
-    path: '/reports',
+    path: '/profile/:username',
     icon: <BsIcons.BsFillPersonFill />,
     cName: 'nav-text'
   },
