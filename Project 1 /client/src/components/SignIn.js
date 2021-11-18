@@ -10,7 +10,7 @@ function SignIn(){
     try {
       const user={username};
       const pass={password};
-      const response= await fetch("http://localhost:5001/homepage/"+user["username"],{
+      const response= await fetch("http://localhost:5001/signin/"+user["username"],{
         method:"GET",
       })
       .then(response => response.json())

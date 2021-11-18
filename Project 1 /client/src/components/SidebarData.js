@@ -11,7 +11,7 @@ export const SidebarData = [
   },
   {
     title: 'Profile',
-    path: '/profile/:username',
+    path: '/profile/',
     icon: <BsIcons.BsFillPersonFill />,
     cName: 'nav-text'
   },
