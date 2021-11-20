@@ -15,10 +15,10 @@ function SignIn(){
       })
       .then(response => response.json())
       if (response["password"]===pass["password"]){
-        console.log("Si funciono");
         console.log(response);
         window.location.href = 'http://localhost:3000/homepage/'+user["username"];
       }
+      sessionStorage.setItem('UserName', response["username"]);
       console.log(response["username"])
       console.log(response["password"])
     }

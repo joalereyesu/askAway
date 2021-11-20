@@ -17,6 +17,7 @@ function SignUp(){
         body:JSON.stringify(body)
       })
       window.location.href = 'http://localhost:3000/homepage/'+username;
+      sessionStorage.setItem('UserName', response["username"]);
       console.log(response)
     } catch (error) {
       console.error(error.message);

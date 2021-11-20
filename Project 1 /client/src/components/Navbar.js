@@ -10,6 +10,7 @@ function Navbar() {
   const [sidebar, setSidebar] = useState(false);
 
   const showSidebar = () => setSidebar(!sidebar);
+  const username=sessionStorage.getItem('UserName');
 
   return (
     <>
@@ -27,7 +28,7 @@ function Navbar() {
                 <AiIcons.AiOutlineClose />
               </Link>
             </li>
-            <h1>Welcome Jose!</h1>
+            <h1>Welcome {username}!</h1>
         
             {SidebarData.map((item, index) => {
               return (

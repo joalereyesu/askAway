@@ -60,7 +60,7 @@ label{
 
 button{
   margin-bottom:-100px;
-  margin-left: -105px;
+  margin-left: -110px;
   color:#F0A500;
 }
 
@@ -71,7 +71,7 @@ button{
 }
 
 p{
-  margin-top:80px;
+  margin-top:28px;
   margin-left: 50px;
   color:white;
 }
@@ -111,9 +111,34 @@ a:hover{
 }
 
 form{
-  margin-top: -45px;
+  position:relative;
+  top:-60px;
 }
 
+.question{
+  position:relative;
+  top: 20px;
+  left:12.5px;
+  width: 475px;
+  height:120px;
+  font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  color:#334756;
+}
+
+.formpregunta{
+  margin-top:-200px;
+  height:200px;
+  width:500px;
+  top:230px;
+  left:320px;
+  background-color: #F0A500;
+}
+
+.buttonenviar{
+  position:relative;
+  top:25px;
+  left:290px;
+}
 
 
 
