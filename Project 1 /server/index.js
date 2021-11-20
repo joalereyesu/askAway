@@ -20,7 +20,6 @@ app.post("/signup", async(req, res) => {
         const {username, email, password} = req.body;
         const newUser = await pool.query("INSERT INTO users (username, email, password) VALUES($1, $2, $3) RETURNING *", [username, email, password]);
         res.json(newUser.rows[0]);
-        const q_table = await pool.query(`CREATE TABLE ${username} (q_id SERIAL PRIMARY KEY, question VARCHAR(250));`);
     } catch (error) {
         console.error(error.message);
     }
@@ -48,7 +47,7 @@ app.get("/signin/:username", async(req, res) => {
 })
 
 //newQuestion
-app.post("/homepage/:username", async(req, res) => {
+/*app.post("/homepage/:username", async(req, res) => {
     try {
         const {username} = req.params;
         const {question} =req.body;
@@ -57,7 +56,7 @@ app.post("/homepage/:username", async(req, res) => {
     } catch (error) {
         console.log(error.message);
     }
-});
+});*/
 
 //Update info
 app.put("/profile/:id", async(req, res)=>{
@@ -82,11 +81,6 @@ app.delete("/users/:id", async(req, res)=>{
    } 
 });
 
-
-app.listen(5001, () => {
-    console.log("The server has started on port 5001");
-});
-
 app.post("/newquestion", async(req, res) => {
     try {
         const {username, question, category} = req.body;
@@ -96,3 +90,8 @@ app.post("/newquestion", async(req, res) => {
         console.error(error.message);
     }
 });
+
+app.listen(5001, () => {
+    console.log("The server has started on port 5001");
+});
+

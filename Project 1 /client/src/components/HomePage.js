@@ -1,12 +1,16 @@
 import React from "react";
 import Navbar from "./Navbar";
-
+import getAllQuestions from "./getAllQuestions";
+import dictionaryInfo from "./dictionaryInfo";
 
 function HomePage (){
     const username=sessionStorage.getItem('UserName');
     const [question, SetQuestion]=React.useState('')
     const [category, SetCategory]=React.useState('')
     
+    const user = "username";
+    const ques = "question";
+    const user_id = "user_id";
 
 
     const SendQuestion = async(evt) => {
@@ -25,24 +29,14 @@ function HomePage (){
           console.error(error.message);
         }
       }
-      function GetQuestions() {
-        fetch('http://localhost:5001/allquestions')
-          .then(function(response) {
-          return response.json();
-        })
-        .then(function(json) {
-          console.log(json)
-          const questions=json;
-        });
-      }
-      
+
     return (
         <body>
             <Navbar>
             </Navbar>
             <form 
             class="formpregunta"
-            onSubmit={SendQuestion}
+            onSubmit = {SendQuestion}
             >
                 <textarea name="post" id="post-content" class="question" placeholder="Do you have a question?"
                 onChange={(e)=>{SetQuestion(e.target.value)}}>
@@ -71,6 +65,15 @@ function HomePage (){
                 </select>
                 <button class="buttonenviar">Submit question</button>
             </form>
+            {dictionaryInfo.map((item, index) => {
+              return (
+                <form>
+                  <li key = {item.user_id}>
+                  <textarea name="post" id="post-content" class="question" placeholder={}/>
+                </li>
+                </form>
+              )
+            })}
         </body>
     )
 }
