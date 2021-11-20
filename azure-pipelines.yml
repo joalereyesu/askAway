@@ -34,7 +34,7 @@ steps:
 - task: AzureRmWebAppDeployment@4
   inputs:
     ConnectionType: 'AzureRM'
-    azureSubscription: 'Pay-As-You-Go ($(subscriptionId))'
+    azureSubscription: 'Azure subscription 1 (0aa457be-ef8d-43ae-a7b3-523da67cd298)'
     appType: 'webApp'
     WebAppName: 'webappname'
     deployToSlotOrASE: true
