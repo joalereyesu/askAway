@@ -1,0 +1,28 @@
+# Node.js
+# Build a general Node.js project with npm.
+# Add steps that analyze code, save build artifacts, deploy, and more:
+# https://docs.microsoft.com/azure/devops/pipelines/languages/javascript
+
+ # Sample YAML file to validate and export an ARM template into a build artifact
+ # Requires a package.json file located in the target repository
+    
+ trigger:
+ - main #collaboration branch
+    
+ pool:
+   vmImage: 'ubuntu-latest'
+    
+ steps:
+    
+ # Installs Node and the npm packages saved in your package.json file in the build
+    
+ - task: NodeTool@0
+   inputs:
+     versionSpec: '12.x'
+   displayName: 'Install Node.js'
+    
+ - task: Npm@1
+   inputs:
+     command: 'install'
+     verbose: true
+   displayName: 'Install npm package'
