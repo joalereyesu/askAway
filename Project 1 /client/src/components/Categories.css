@@ -1,0 +1,50 @@
+.button {
+  background-color: #ea9308;
+  border: none;
+  color: white;
+  padding: 30px 30px;
+  text-align: center;
+  display: inline-block;
+  font-size: 20px;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 8px;
+}
+
+.buttontop {
+  background-color: #ea9308;
+  border: none;
+  color: white;
+  padding: 30px 30px;
+  text-align: center;
+  display: inline-block;
+  font-size: 20px;
+  margin: 4px 2px;
+  margin-top: 170px;
+  cursor: pointer;
+  border-radius: 8px;
+  font-family: sans-serif
+}
+
+.buttonleft {
+  background-color: #ea9308;
+  border: none;
+  color: white;
+  padding: 30px 30px;
+  text-align: center;
+  display: inline-block;
+  font-size: 20px;
+  margin: 4px 2px;
+  margin-left: 70px;
+  cursor: pointer;
+  border-radius: 8px;
+  font-family: sans-serif
+}
+
+.heading {
+  color: white;
+  text-align: center;
+  font-family: sans-serif;
+  margin-top: -10px
+}
+
