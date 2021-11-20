@@ -6,6 +6,7 @@ function HomePage (){
     const username=sessionStorage.getItem('UserName');
     const [question, SetQuestion]=React.useState('')
     const [category, SetCategory]=React.useState('')
+    
 
 
     const SendQuestion = async(evt) => {
@@ -24,9 +25,17 @@ function HomePage (){
           console.error(error.message);
         }
       }
-
-
-
+      function GetQuestions() {
+        fetch('http://localhost:5001/allquestions')
+          .then(function(response) {
+          return response.json();
+        })
+        .then(function(json) {
+          console.log(json)
+          const questions=json;
+        });
+      }
+      
     return (
         <body>
             <Navbar>
@@ -62,12 +71,9 @@ function HomePage (){
                 </select>
                 <button class="buttonenviar">Submit question</button>
             </form>
-            
-            <div class="post">
-                <img src={'/static/profilepicture.png'} alt="user" class="pp"/>
-            </div>
         </body>
     )
 }
+
 
 export default HomePage;
