@@ -26,18 +26,3 @@ steps:
     testResultsFiles: '**/TEST-*.xml'
 
 - task: PublishBuildArtifacts@1
-  inputs:
-    PathtoPublish: '$(Build.ArtifactStagingDirectory)'
-    ArtifactName: 'drop'
-    publishLocation: 'Container'
-
-- task: AzureRmWebAppDeployment@4
-  inputs:
-    ConnectionType: 'AzureRM'
-    azureSubscription: 'Azure subscription 1 (0aa457be-ef8d-43ae-a7b3-523da67cd298)'
-    appType: 'webApp'
-    WebAppName: 'webappname'
-    deployToSlotOrASE: true
-    ResourceGroupName: 'resourceGroupName'
-    SlotName: 'production'
-    packageForLinux: '$(Build.ArtifactStagingDirectory)/*.zip'
