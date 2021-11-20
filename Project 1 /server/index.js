@@ -20,6 +20,7 @@ app.post("/signup", async(req, res) => {
         const {username, email, password} = req.body;
         const newUser = await pool.query("INSERT INTO users (username, email, password) VALUES($1, $2, $3) RETURNING *", [username, email, password]);
         res.json(newUser.rows[0]);
+        const q_table = await pool.query(`CREATE TABLE ${username} (q_id SERIAL PRIMARY KEY, question VARCHAR(250));`);
     } catch (error) {
         console.error(error.message);
     }
@@ -36,16 +37,27 @@ app.get("/users", async(req,res)=>{
 });
 
 // Select a user
-app.get("/homepage/:username", async(req, res) => {
+app.get("/signin/:username", async(req, res) => {
     try {
       const {username}=req.params;
       const user = await pool.query("SELECT * FROM users WHERE username=$1", [username]);
       res.json(user.rows[0]);
-      const q_table = await pool.query(`CREATE TABLE ${username} (q_id SERIAL PRIMARY KEY, question VARCHAR(250));`);
     } catch (error) {
         console.error(error.message);
     }
 })
+
+//newQuestion
+app.post("/homepage/:username", async(req, res) => {
+    try {
+        const {username} = req.params;
+        const {question} =req.body;
+        const newQuestion = await pool.query(`INSERT INTO ${username} (question) VALUES($1) RETURNING *`, [question]);
+        res.json(newQuestion.rows[0]);
+    } catch (error) {
+        console.log(error.message);
+    }
+});
 
 //Update info
 app.put("/profile/:id", async(req, res)=>{

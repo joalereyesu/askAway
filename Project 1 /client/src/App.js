@@ -16,7 +16,7 @@ function App() {
       <div className="container">
       <BrowserRouter>
         <Routes>
-          <Route path="/signup" element = {<SignUp/>}></Route>
+          <Route path="/" element = {<SignUp/>}></Route>
           <Route path="/signin" element = {<SignIn/>}></Route>
           <Route path="/homepage/:username" element = {<HomePage/>}></Route>
           <Route path = "/profile/:username" element = {<Profile/>}></Route>

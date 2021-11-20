@@ -61,6 +61,7 @@ function Profile (){
                             />
                         </label>
                         <button className="btn btn-warning">Change</button>
+                        <button className = "btn btn-danger">Delete account</button>
                     </span>
                 </form>
             </div>
