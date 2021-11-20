@@ -24,3 +24,5 @@ steps:
   inputs:
     testResultsFormat: 'JUnit'
     testResultsFiles: '**/TEST-*.xml'
+
+- task: PublishBuildArtifacts@1
