@@ -13,4 +13,4 @@ Se cuenta con una variedad de categorías para que los clientes puedan preguntar
 - Ver el listado de categorías de los diferentes temas que hay 
 - Realizar preguntas de cierta categoría
 - Responder preguntas 
-- Darle like a las preguntas
+
