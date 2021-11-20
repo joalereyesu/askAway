@@ -122,7 +122,9 @@ form{
   width: 475px;
   height:120px;
   font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-  color:#334756;
+  color:#F0A500;
+  background-color:#082032;
+  border-radius: 10px;
 }
 
 .formpregunta{
@@ -131,15 +133,44 @@ form{
   width:500px;
   top:230px;
   left:320px;
-  background-color: #F0A500;
+  background-color: #334756;
+  border-radius: 20px;
+  box-shadow: 100px, #334756;
+  
 }
 
 .buttonenviar{
   position:relative;
   top:25px;
-  left:290px;
+  left:285px;
+  color:#F0A500;
+  background-color:#334756;
+  
 }
 
+::placeholder{
+  color:#F0A500;
+  position:relative;
+  top:8px;
+  left:10px;
+}
+
+.post{
+  margin-top:-200px;
+  width:1000px;
+  height:200px;
+  background-color: #F0A500;
+  position:relative;
+  top:500px;
+  left:75px;
+}
+
+.pp{
+  width: 42px;
+  height: 40px;
+  position:relative;
+  right:60px;
+}
 
 
 

@@ -1,8 +1,8 @@
 
 
-CREATE TABLE users(
+CREATE TABLE questions(
     user_id SERIAL PRIMARY KEY, 
     username VARCHAR(50),
-    email VARCHAR(50),
-    password VARCHAR(50)
+    question VARCHAR(200),
+    category VARCHAR(50)
 );

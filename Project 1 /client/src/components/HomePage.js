@@ -3,36 +3,69 @@ import Navbar from "./Navbar";
 
 
 function HomePage (){
+    const username=sessionStorage.getItem('UserName');
+    const [question, SetQuestion]=React.useState('')
+    const [category, SetCategory]=React.useState('')
+
+
+    const SendQuestion = async(evt) => {
+        evt.preventDefault();
+        try {
+          const body={username, question, category};
+          const response= await fetch("http://localhost:5001/newquestion", {
+            method:"POST",
+            headers:{"Content-Type":"application/json"},
+            body:JSON.stringify(body)
+          })
+          window.location.href = 'http://localhost:3000/homepage/'+username;
+          sessionStorage.setItem('UserName', response["username"]);
+          console.log(response)
+        } catch (error) {
+          console.error(error.message);
+        }
+      }
+
+
+
     return (
         <body>
             <Navbar>
             </Navbar>
-            <form class="formpregunta">
-                <textarea name="post" id="post-content" class="question" placeholder="Do you have a question?">
+            <form 
+            class="formpregunta"
+            onSubmit={SendQuestion}
+            >
+                <textarea name="post" id="post-content" class="question" placeholder="Do you have a question?"
+                onChange={(e)=>{SetQuestion(e.target.value)}}>
                 </textarea>
-                <select name="skills" multiple="" class="ui fluid dropdown" style={{position : "relative", top : '20px', left: '13px'}}>
+                <select name="skills" multiple="" class="ui fluid dropdown" style={{position : "relative", top : '20px', left: '13px', backgroundColor: '#334756', color:'#F0A500'}}
+                onChange={(e)=>{SetCategory(e.target.value)}}>
                     <option value="">Categories</option>
-                    <option value="angular">Technology</option>
-                    <option value="css">Food</option>
+                    <option value="technology">Technology</option>
+                    <option value="food">Food</option>
                     <option value="design">Art</option>
-                    <option value="ember">Politics</option>
-                    <option value="html">Cars</option>
-                    <option value="ia">Sports</option>
-                    <option value="javascript">Travel</option>
-                    <option value="mech">News</option>
-                    <option value="meteor">Covid-19</option>
-                    <option value="node">Fitness</option>
-                    <option value="plumbing">Design</option>
-                    <option value="python">Business</option>
-                    <option value="rails">Hot Topics</option>
-                    <option value="react">Celebrities</option>
-                    <option value="repair">Movies and Tv Shows</option>
-                    <option value="ruby">Books</option>
-                    <option value="ui">Marketing</option>
-                    <option value="ux">Innovation</option>
+                    <option value="politics">Politics</option>
+                    <option value="carss">Cars</option>
+                    <option value="sports">Sports</option>
+                    <option value="travel">Travel</option>
+                    <option value="news">News</option>
+                    <option value="covid">Covid-19</option>
+                    <option value="fitness">Fitness</option>
+                    <option value="design">Design</option>
+                    <option value="business">Business</option>
+                    <option value="science">Science</option>
+                    <option value="celebrities">Celebrities</option>
+                    <option value="moviestv">Movies and Tv Shows</option>
+                    <option value="books">Books</option>
+                    <option value="marketing">Marketing</option>
+                    <option value="innovation">Innovation</option>
                 </select>
                 <button class="buttonenviar">Submit question</button>
             </form>
+            
+            <div class="post">
+                <img src={'/static/profilepicture.png'} alt="user" class="pp"/>
+            </div>
         </body>
     )
 }
