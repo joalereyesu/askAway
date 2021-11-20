@@ -28,7 +28,6 @@ function Navbar() {
               </Link>
             </li>
             <h1>Welcome Jose!</h1>
-        
             {SidebarData.map((item, index) => {
               return (
                 <li key={index} className={item.cName}>
