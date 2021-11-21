@@ -1,5 +1,5 @@
 const express = require("express");
-const app = express(); 
+const app = express();
 const cors = require("cors");
 const pool = require("./db");
 
@@ -47,7 +47,7 @@ app.get("/signin/:username", async(req, res) => {
 })
 
 //newQuestion
-app.post("/homepage/:username", async(req, res) => {
+/*app.post("/homepage/:username", async(req, res) => {
     try {
         const {username} = req.params;
         const {question} =req.body;
@@ -56,17 +56,17 @@ app.post("/homepage/:username", async(req, res) => {
     } catch (error) {
         console.log(error.message);
     }
-});
+});*/
 
 //Update info
 app.put("/profile/:id", async(req, res)=>{
     try {
        const {id} = req.params;
        const {username, email, password}=req.body;
-       const updateUser = await pool.query("UPDATE users SET username=$1, email=$2, password=$3 WHERE user_id=$4", [username, email, password, id]); 
+       const updateUser = await pool.query("UPDATE users SET username=$1, email=$2, password=$3 WHERE user_id=$4", [username, email, password, id]);
        res.json("User was updated");
     } catch (error) {
-       console.log(error.message); 
+       console.log(error.message);
     }
 })
 
@@ -78,12 +78,7 @@ app.delete("/users/:id", async(req, res)=>{
       res.json("User was deleted");
    } catch (error) {
        console.log(error.message);
-   } 
-});
-
-
-app.listen(5001, () => {
-    console.log("The server has started on port 5001");
+   }
 });
 
 app.post("/newquestion", async(req, res) => {

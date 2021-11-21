@@ -1,8 +1,7 @@
 import React from "react";
 import Navbar from "./Navbar";
-import { useEffect, useState } from "react";
-
-
+import getAllQuestions from "./getAllQuestions";
+import dictionaryInfo from "./dictionaryInfo";
 
 function HomePage (){
     const username=sessionStorage.getItem('UserName');
@@ -21,11 +20,11 @@ function HomePage (){
         });
       }
 
-    
-  
+
+
     useEffect(() => {
       getQuestions();
-    }, []); 
+    }, []);
 
 
     const SendQuestion = async(evt) => {
@@ -48,9 +47,9 @@ function HomePage (){
         <body>
             <Navbar>
             </Navbar>
-            <form 
+            <form
             class="formpregunta"
-            onSubmit={SendQuestion}
+            onSubmit = {SendQuestion}
             >
                 <textarea name="post" id="post-content" class="question" placeholder="Do you have a question?"
                 onChange={(e)=>{SetQuestion(e.target.value)}}>
@@ -78,8 +77,8 @@ function HomePage (){
                     <option value="innovation">Innovation</option>
                 </select>
                 <button class="buttonenviar">Submit question</button>
-            </form> 
-            <p class="preguntas">{questions}</p>  
+            </form>
+            <p class="preguntas">{questions}</p>
         </body>
     )
 }

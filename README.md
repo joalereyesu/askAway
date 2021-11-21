@@ -14,3 +14,7 @@ Se cuenta con una variedad de categorías para que los clientes puedan preguntar
 - Realizar preguntas de cierta categoría
 - Responder preguntas 
 
+## Desarrollo
+- Frontend: React.js
+- Backend: Node.js
+- Base de Datos: Posgres

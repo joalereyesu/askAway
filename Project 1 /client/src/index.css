@@ -30,7 +30,7 @@ div {
   height: 500px;
   position: absolute;
   top: 15%;
-  left: 0px; 
+  left: 0px;
   right: 0px;
   margin: 0px auto;
   border-radius:2%;
@@ -42,7 +42,7 @@ div {
   height: 400px;
   position: absolute;
   top: 15%;
-  left: 0px; 
+  left: 0px;
   right: 0px;
   margin: 0px auto;
   border-radius:2%;
@@ -51,7 +51,7 @@ div {
 
 label{
   position:relative;
-  left: 85px; 
+  left: 85px;
   right: 0px;
   margin: 0px auto;
   text-align: center;
@@ -136,7 +136,7 @@ form{
   background-color: #334756;
   border-radius: 20px;
   box-shadow: 100px, #334756;
-  
+
 }
 
 .buttonenviar{
@@ -145,7 +145,7 @@ form{
   left:285px;
   color:#F0A500;
   background-color:#334756;
-  
+
 }
 
 ::placeholder{
@@ -184,6 +184,3 @@ h3{
   top:300px;
   background-color:#F0A500;
 }
-
-
-
