@@ -40,7 +40,7 @@ steps:
 - task: AzureWebApp@1
   displayName: 'Azure Web App Deploy: nodejs-cicd-16353'
   inputs:
-    azureSubscription: $(azureSubscription)
+    azureSubscription: Azure subscription 1 (0aa457be-ef8d-43ae-a7b3-523da67cd298)
     appType: webAppLinux
     appName: $(webAppName)
     runtimeStack: 'NODE|10.10'
