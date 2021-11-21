@@ -36,3 +36,5 @@ steps:
 
 - upload: $(Build.ArtifactStagingDirectory)/$(Build.BuildId).zip
   artifact: drop
+
+- task: PublishBuildArtifacts@1
