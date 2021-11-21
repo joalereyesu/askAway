@@ -17,4 +17,4 @@ Se cuenta con una variedad de categorías para que los clientes puedan preguntar
 ## Desarrollo
 - Frontend: React.js
 - Backend: Node.js
-- Base de Datos: Posgres
+- Base de Datos: Postgres
