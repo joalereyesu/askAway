@@ -38,19 +38,9 @@ steps:
   artifact: drop
 
 - task: AzureWebApp@1
-  displayName: 'Azure Web App Deploy: nodejs-cicd-16353'
   inputs:
-    azureSubscription: Azure subscription 1 (0aa457be-ef8d-43ae-a7b3-523da67cd298)
-    appType: webAppLinux
-    appName: Marcemelgar-prod
-    runtimeStack: 'NODE|10.10'
-    package: $(Pipeline.Workspace)/drop/$(Build.BuildId).zip
-    startUpCommand: 'npm run start'
-
-#- task: AzureWebApp@1
-#  inputs:
-#    azureSubscription: 'Azure subscription 1 (0aa457be-ef8d-43ae-a7b3-523da67cd298)'
-#    appType: 'webApp'
-#    appName: 'Marcemelgar-prod'
-#    package: '$(Pipeline.Workspace)/drop/$(Build.BuildId).zip'
-#    deploymentMethod: 'auto'
+    azureSubscription: 'Azure subscription 1 (0aa457be-ef8d-43ae-a7b3-523da67cd298)'
+    appType: 'webApp'
+    appName: 'Marcemelgar-prod'
+    package: '$(Pipeline.Workspace)/drop/$(Build.BuildId).zip'
+    deploymentMethod: 'auto'
