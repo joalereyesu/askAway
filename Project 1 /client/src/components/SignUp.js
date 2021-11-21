@@ -1,10 +1,12 @@
 import React from "react";
 
 
+
 function SignUp(){
   const [username, SetUsername]=React.useState('')
   const [email, SetEmail]=React.useState('')
   const [password, SetPassword]=React.useState('')
+  
 
 
   const SendInfo = async(evt) => {
@@ -23,6 +25,7 @@ function SignUp(){
       console.error(error.message);
     }
   }
+
 
   return (
     <body>

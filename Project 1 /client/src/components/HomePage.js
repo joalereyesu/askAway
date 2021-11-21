@@ -1,19 +1,38 @@
 import React from "react";
 import Navbar from "./Navbar";
+import { useEffect, useState } from "react";
+
 
 
 function HomePage (){
     const username=sessionStorage.getItem('UserName');
-    const [question, SetQuestion]=React.useState('')
-    const [category, SetCategory]=React.useState('')
+    const [question, SetQuestion]=React.useState('');
+    const [category, SetCategory]=React.useState('');
+    const [questions, SetQuestions] = useState('');
+
+    function getQuestions() {
+      fetch('http://localhost:5001/allquestions')
+        .then(response => {
+          console.log(response);
+          return response.JSON();
+        })
+        .then(data => {
+          SetQuestions(data);
+        });
+      }
+
     
+  
+    useEffect(() => {
+      getQuestions();
+    }, []); 
 
 
     const SendQuestion = async(evt) => {
         evt.preventDefault();
         try {
           const body={username, question, category};
-          const response= await fetch("http://localhost:5001/newquestion", {
+          const response= fetch("http://localhost:5001/newquestion", {
             method:"POST",
             headers:{"Content-Type":"application/json"},
             body:JSON.stringify(body)
@@ -25,17 +44,6 @@ function HomePage (){
           console.error(error.message);
         }
       }
-      function GetQuestions() {
-        fetch('http://localhost:5001/allquestions')
-          .then(function(response) {
-          return response.json();
-        })
-        .then(function(json) {
-          console.log(json)
-          const questions=json;
-        });
-      }
-      
     return (
         <body>
             <Navbar>
@@ -70,7 +78,8 @@ function HomePage (){
                     <option value="innovation">Innovation</option>
                 </select>
                 <button class="buttonenviar">Submit question</button>
-            </form>
+            </form> 
+            <p class="preguntas">{questions}</p>  
         </body>
     )
 }

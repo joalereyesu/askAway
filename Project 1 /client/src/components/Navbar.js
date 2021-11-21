@@ -28,7 +28,8 @@ function Navbar() {
                 <AiIcons.AiOutlineClose />
               </Link>
             </li>
-            <h1>Welcome {username}!</h1>
+            <h2>Welcome</h2>
+            <h3>{username}!</h3>
         
             {SidebarData.map((item, index) => {
               return (

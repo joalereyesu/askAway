@@ -172,5 +172,18 @@ form{
   right:60px;
 }
 
+h3{
+  position:relative;
+  right:30px;
+}
+
+.preguntas{
+  margin-top:-24px;
+  margin-right:35px;
+  position:relative;
+  top:300px;
+  background-color:#F0A500;
+}
+
 
 

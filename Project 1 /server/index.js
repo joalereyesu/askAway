@@ -20,7 +20,6 @@ app.post("/signup", async(req, res) => {
         const {username, email, password} = req.body;
         const newUser = await pool.query("INSERT INTO users (username, email, password) VALUES($1, $2, $3) RETURNING *", [username, email, password]);
         res.json(newUser.rows[0]);
-        const q_table = await pool.query(`CREATE TABLE ${username} (q_id SERIAL PRIMARY KEY, question VARCHAR(250));`);
     } catch (error) {
         console.error(error.message);
     }
@@ -92,6 +91,15 @@ app.post("/newquestion", async(req, res) => {
         const {username, question, category} = req.body;
         const newUser = await pool.query("INSERT INTO questions (username, question, category) VALUES($1, $2, $3) RETURNING *", [username, question, category]);
         res.json(newUser.rows[0]);
+    } catch (error) {
+        console.error(error.message);
+    }
+});
+
+app.get("/allquestions", async(req,res)=>{
+    try {
+       const allQuestions = await pool.query("SELECT * FROM questions");
+       res.json(allQuestions.rows);
     } catch (error) {
         console.error(error.message);
     }
