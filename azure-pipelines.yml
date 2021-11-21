@@ -36,11 +36,3 @@ steps:
 
 - upload: $(Build.ArtifactStagingDirectory)/$(Build.BuildId).zip
   artifact: drop
-
-- task: AzureWebApp@1
-  inputs:
-    azureSubscription: 'Azure subscription 1 (0aa457be-ef8d-43ae-a7b3-523da67cd298)'
-    appType: 'webApp'
-    appName: 'Marcemelgar-prod'
-    package: '$(Pipeline.Workspace)/drop/$(Build.BuildId).zip'
-    deploymentMethod: 'auto'
