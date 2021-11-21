@@ -26,18 +26,11 @@ steps:
     testResultsFiles: '**/TEST-*.xml'
 
 - task: ArchiveFiles@2
-  displayName: 'Archive files'
   inputs:
-    rootFolderOrFile: '$(System.DefaultWorkingDirectory)'
-    includeRootFolder: false
-    archiveType: zip
-    archiveFile: $(Build.ArtifactStagingDirectory)/$(Build.BuildId).zip
-    replaceExistingArchive: true
+    rootFolderOrFile: '$(System.DefaultWorkingDirectory)/build' 
+    includeRootFolder: false 
+    archiveType: 'zip'
+    archiveFile: '$(Build.ArtifactStagingDirectory)/$(Build.BuildId).zip'
 
-#- task: CopyFiles@2
-#  inputs:
-#    SourceFolder: 'D:\a\r1\a\'
-#    Contents: '**\*.zip'
-#    TargetFolder: '$(Build.ArtifactStagingDirectory)'
-
-- task: PublishBuildArtifacts@1
+- publish: $(Build.ArtifactStagingDirectory)/$(Build.BuildId).zip
+  artifact: '$(Build.BuildId)'
