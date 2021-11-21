@@ -3,7 +3,7 @@ import "./Categories.css";
 class Categories extends Component {
   render() {
     return (
-      <div classNameName="Categories">
+      <div className="Categories">
         <div
           style={{
             backgroundColor: "#0a1825",
