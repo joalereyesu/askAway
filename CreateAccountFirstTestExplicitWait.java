@@ -9,7 +9,7 @@ import systemTesting.InitDriver;
 
 public class CreateAccountFirstTestExplicitWait extends InitDriver {
 
-    private String url = "http://localhost:8081/register.html";
+    private String url = "http://localhost:3000/signup";
 
     @BeforeMethod
     public void goToUrl(){
@@ -19,14 +19,12 @@ public class CreateAccountFirstTestExplicitWait extends InitDriver {
     @Test
     public void createAccount() throws InterruptedException {
         Thread.sleep(5000);
-        wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("exampleFirstName"))).sendKeys("Wolff");
-        wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("exampleLastName"))).sendKeys("Ferguson");
-        wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("exampleInputEmail"))).sendKeys("wolff@ufm.edu");
-        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//div/div/input[@placeholder='Password']"))).sendKeys("password");
-        wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("exampleRepeatPassword"))).sendKeys("password");
-        wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//a[contains(text(),'Register Account')]"))).click();
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("username"))).sendKeys("marcemelgaar");
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("mail"))).sendKeys("marcemelgar@gmail.com");
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("password"))).sendKeys("canigetahiya");
+        wait.until(ExpectedConditions.elementToBeClickable(By.id("signUp"))).click();
         String currentUrl  = driver.getCurrentUrl();
-        if(!currentUrl.contains("login.html")){
+        if(!currentUrl.contains("signin")){
             Assert.fail("The page is not the correct one.");
         }
     }

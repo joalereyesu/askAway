@@ -8,7 +8,7 @@ public class MyFistSeleniumTest extends InitDriver {
 
     @BeforeClass(alwaysRun = true)
     public void initUrl(){
-        driver.get("http://localhost:8081/");
+        driver.get("http://localhost:3000/");
 
     }
 
