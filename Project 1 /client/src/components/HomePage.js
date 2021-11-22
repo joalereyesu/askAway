@@ -1,32 +1,28 @@
 import React from "react";
 import Navbar from "./Navbar";
-import getAllQuestions from "./getAllQuestions";
-import dictionaryInfo from "./dictionaryInfo";
+import {useEffect, useState} from "react";
+import axios from "axios";
 
 function HomePage (){
+
+  function GetQuestions(){
+    axios.get('http://localhost:5001/allquestions').then(resp => {
+    SetQuestions(resp.data);
+  });
+  }
+  
+  useEffect(() => {
+    GetQuestions();
+  }, []);
+
     const username=sessionStorage.getItem('UserName');
     const [question, SetQuestion]=React.useState('');
     const [category, SetCategory]=React.useState('');
-    const [questions, SetQuestions] = useState('');
+    const [questions, SetQuestions] = useState([]);
 
-    function getQuestions() {
-      fetch('http://localhost:5001/allquestions')
-        .then(response => {
-          console.log(response);
-          return response.JSON();
-        })
-        .then(data => {
-          SetQuestions(data);
-        });
-      }
+    
 
-
-
-    useEffect(() => {
-      getQuestions();
-    }, []);
-
-
+    console.log(questions)
     const SendQuestion = async(evt) => {
         evt.preventDefault();
         try {
@@ -45,8 +41,6 @@ function HomePage (){
       }
     return (
         <body>
-            <Navbar>
-            </Navbar>
             <form
             class="formpregunta"
             onSubmit = {SendQuestion}
@@ -78,7 +72,18 @@ function HomePage (){
                 </select>
                 <button class="buttonenviar">Submit question</button>
             </form>
-            <p class="preguntas">{questions}</p>
+            <div class="li2">
+            {questions.map((item) => {
+              return (
+                  <div class="post2">
+                    <b>User:</b> {item.username}
+                    <span><br/>{item.question}</span>
+                  </div>
+              );
+            })}
+            </div>
+          <Navbar>
+          </Navbar>
         </body>
     )
 }

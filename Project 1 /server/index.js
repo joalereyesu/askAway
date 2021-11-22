@@ -99,3 +99,7 @@ app.get("/allquestions", async(req,res)=>{
         console.error(error.message);
     }
 });
+
+app.listen(5001, () => {
+    console.log("The server has started on port 5001");
+});
