@@ -41,6 +41,7 @@ function SignUp(){
         required="required"
         name="username"
         placeholder="Username"
+        id = "username"
         onChange={(e)=>{SetUsername(e.target.value)}}
       />
     </label>
@@ -51,6 +52,7 @@ function SignUp(){
         required="required"
         name="email"
         placeholder="E-mail"
+        id = "mail"
         onChange={(e)=>{SetEmail(e.target.value)}}
       />
     </label>
@@ -60,6 +62,7 @@ function SignUp(){
         placeholder="New Password"
         required="required"
         name="password"
+        id = "password"
         className="form-control"
         onChange={(e)=>{SetPassword(e.target.value)}}
       />
@@ -71,7 +74,7 @@ function SignUp(){
       required="required"
       />
     <label for="consent">I agree to <a href="http://localhost:3000/terms">Terms and Conditions</a></label>
-    <button className="btn btn-warning">Sign Up</button>
+    <button className="btn btn-warning" id = "signUp">Sign Up</button>
     </span>
   </form> 
   <p className="pstyle">If you already have an account, <a href="http://localhost:3000/signin">Sign In</a></p>
