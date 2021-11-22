@@ -9,7 +9,7 @@ Se cuenta con una variedad de categorías para que los clientes puedan preguntar
 
 ## AskAway ofrece a los usuarios las siguientes funcionalidades: 
 
-- Crear un perfil y registrarlo
+- Crear un perfil y registrarlo en la base de datos
 - Ver el listado de categorías de los diferentes temas que hay 
 - Realizar preguntas de cierta categoría
 - Responder preguntas 
@@ -17,4 +17,4 @@ Se cuenta con una variedad de categorías para que los clientes puedan preguntar
 ## Desarrollo
 - Frontend: React.js
 - Backend: Node.js
-- Base de Datos: Posgres
+- Base de Datos: Postgres
